@@ -13,9 +13,22 @@ int DecToBinary(int DecNum){
     }
     return ans;
 }
-int main(){
-    for(int i=1;i<=10;i++){
-        cout << DecToBinary(i) << endl;
+int BinaryToDec(int Bin){
+    int pow=1;
+    int ans=0;
+    while(Bin>0){
+        int rem=Bin%10;
+        ans+=rem*pow;
+        Bin/=10;
+        pow*=2;
     }
+    return ans;
+}
+int main(){
+    // for(int i=1;i<=10;i++){
+    //     cout << DecToBinary(i) << endl;
+    // }
+    int Bin=101;
+    cout << BinaryToDec(Bin) << endl;
     return 0;
 }
